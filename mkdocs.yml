@@ -1,0 +1,10 @@
+site_name: Bharat Address
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Schema: schema.md
+  - Validator: validator.md
+  - Bharat Maps: integrations.md
+  - API: api.md
