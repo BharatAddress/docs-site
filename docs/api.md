@@ -11,6 +11,11 @@ OpenAPI documentation:
 - ReDoc: `http://localhost:8000/redoc`
 - OpenAPI JSON: `http://localhost:8000/openapi.json`
 
+Query parameters (items):
+- `limit` (default 100): max features returned.
+- `offset` (default 0): pagination start index; `next`/`prev` links are provided.
+- `bbox` (minLon,minLat,maxLon,maxLat): filters features by bounding box.
+
 Spec stubs (static):
 - YAML: `specs/ogc-api-features.yml`
 - JSON: `specs/ogc-api-features.json`
