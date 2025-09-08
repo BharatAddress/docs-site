@@ -1,7 +1,5 @@
-name: Deploy Docs
+name: Deploy Docs (disabled; published via website CI)
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
 permissions:
   contents: read
@@ -12,6 +10,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
