@@ -30,3 +30,7 @@ pip install -r requirements.txt
 mkdocs build --strict
 open site/index.html
 ```
+
+## Contributor Guide
+
+- Central guidelines: https://github.com/BharatAddress/.github/blob/main/AGENTS.md
