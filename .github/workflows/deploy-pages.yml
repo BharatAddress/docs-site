@@ -1,8 +1,6 @@
-name: Deploy Docs to Org Pages
+name: Deploy Docs to Org Pages (disabled; published via website CI)
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -10,6 +8,7 @@ permissions:
 
 jobs:
   build-and-deploy:
+    if: ${{ false }} # Disabled: site deploy handled by bharataddress.github.io workflow
     runs-on: ubuntu-latest
     steps:
       - name: Checkout docs-site
