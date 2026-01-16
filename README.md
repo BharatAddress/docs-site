@@ -4,33 +4,48 @@
 
 MkDocs site that stitches the project together for non-developers.
 
-Local preview:
+## At a glance
+| Item | Details |
+| --- | --- |
+| Stack | MkDocs + mkdocs-material |
+| Publish | https://bharataddress.github.io |
+| Output | Deployed to `BharatAddress/bharataddress.github.io` |
+
+## Local preview
 ```bash
 pip install mkdocs mkdocs-material
 mkdocs serve
 ```
 
-CI publish to https://bharataddress.github.io
-
-This repo builds with MkDocs and deploys the generated `site/` to the org GitHub Pages repository `BharatAddress/bharataddress.github.io` via a GitHub Actions workflow.
-
-Setup (one-time by repo admin):
-- Create a fine-scoped classic token or PAT with `repo` permission and add it as a repository secret in this `docs-site` repo named `ORG_PAGES_TOKEN`.
-- Ensure the org Pages repo exists: `BharatAddress/bharataddress.github.io` (already created).
-
-Deployment flow:
-- On push to `main`, the workflow `Deploy Docs to Org Pages` runs:
-  - Installs MkDocs dependencies from `requirements.txt`
-  - Builds site with `mkdocs build --strict`
-  - Publishes `site/` to `BharatAddress/bharataddress.github.io` `main` branch using `peaceiris/actions-gh-pages`.
-
-Local build:
+## Local build
 ```bash
 pip install -r requirements.txt
 mkdocs build --strict
 open site/index.html
 ```
 
-## Contributor Guide
+## Deployment flow
+- On push to `main`, the workflow `Deploy Docs to Org Pages` runs.
+- Builds with `mkdocs build --strict`.
+- Publishes `site/` to `BharatAddress/bharataddress.github.io` via `peaceiris/actions-gh-pages`.
 
+## Repo layout
+- `mkdocs.yml`: site configuration.
+- `docs/`: documentation content.
+- `requirements.txt`: MkDocs deps for CI.
+
+## Who should use this
+- Writers and editors maintaining the public docs.
+- Maintainers validating doc builds.
+
+## Links
+- Public site: https://bharataddress.github.io
+- Specs: https://github.com/BharatAddress/specs
+
+## License
+See `LICENSE`.
+
+## Contributing
+- Keep docs small and focused.
+- Validate links locally before merging.
 - Central guidelines: https://github.com/BharatAddress/.github/blob/main/AGENTS.md
